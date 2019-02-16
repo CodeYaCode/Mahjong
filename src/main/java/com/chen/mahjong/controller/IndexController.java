@@ -1,13 +1,17 @@
 package com.chen.mahjong.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+/**
+ * @author LiuChen
+ * @create 2019-02-17-1:35
+ */
+@Controller
 public class IndexController {
 
     @RequestMapping
     public String index() {
-        return "Welcome to mahjong! Good luck";
+        return "login";
     }
 }

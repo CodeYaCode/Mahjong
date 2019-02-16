@@ -3,11 +3,13 @@
 <mapper namespace="com.chen.mahjong.dal.mapper.RoomMapper">
   <resultMap id="BaseResultMap" type="com.chen.mahjong.dal.entity.Room">
     <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:35:41 CST 2019. by MyBatis Generator, do not modify.
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="room_name" jdbcType="VARCHAR" property="room_name" />
     <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="base" jdbcType="INTEGER" property="base" />
+    <result column="flower" jdbcType="INTEGER" property="flower" />
     <result column="east_username" jdbcType="VARCHAR" property="east_username" />
     <result column="south_username" jdbcType="VARCHAR" property="south_username" />
     <result column="west_username" jdbcType="VARCHAR" property="west_username" />
@@ -23,15 +25,15 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:35:41 CST 2019. by MyBatis Generator, do not modify.
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
     -->
-    id, room_name, status, east_username, south_username, west_username, north_username, 
-    east_score, south_score, west_score, north_score, creator, duration, create_time, 
-    update_time
+    id, room_name, status, base, flower, east_username, south_username, west_username, 
+    north_username, east_score, south_score, west_score, north_score, creator, duration, 
+    create_time, update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:35:41 CST 2019. by MyBatis Generator, do not modify.
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
     -->
     select 
     <include refid="Base_Column_List" />
@@ -40,31 +42,31 @@
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:35:41 CST 2019. by MyBatis Generator, do not modify.
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
     -->
     delete from room
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.chen.mahjong.dal.entity.Room">
     <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:35:41 CST 2019. by MyBatis Generator, do not modify.
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
     -->
     insert into room (id, room_name, status, 
-      east_username, south_username, west_username, 
-      north_username, east_score, south_score, 
-      west_score, north_score, creator, 
-      duration, create_time, update_time
-      )
+      base, flower, east_username, 
+      south_username, west_username, north_username, 
+      east_score, south_score, west_score, 
+      north_score, creator, duration, 
+      create_time, update_time)
     values (#{id,jdbcType=INTEGER}, #{room_name,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
-      #{east_username,jdbcType=VARCHAR}, #{south_username,jdbcType=VARCHAR}, #{west_username,jdbcType=VARCHAR}, 
-      #{north_username,jdbcType=VARCHAR}, #{east_score,jdbcType=DOUBLE}, #{south_score,jdbcType=DOUBLE}, 
-      #{west_score,jdbcType=DOUBLE}, #{north_score,jdbcType=DOUBLE}, #{creator,jdbcType=VARCHAR}, 
-      #{duration,jdbcType=DOUBLE}, #{create_time,jdbcType=TIMESTAMP}, #{update_time,jdbcType=TIMESTAMP}
-      )
+      #{base,jdbcType=INTEGER}, #{flower,jdbcType=INTEGER}, #{east_username,jdbcType=VARCHAR}, 
+      #{south_username,jdbcType=VARCHAR}, #{west_username,jdbcType=VARCHAR}, #{north_username,jdbcType=VARCHAR}, 
+      #{east_score,jdbcType=DOUBLE}, #{south_score,jdbcType=DOUBLE}, #{west_score,jdbcType=DOUBLE}, 
+      #{north_score,jdbcType=DOUBLE}, #{creator,jdbcType=VARCHAR}, #{duration,jdbcType=DOUBLE}, 
+      #{create_time,jdbcType=TIMESTAMP}, #{update_time,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.chen.mahjong.dal.entity.Room">
     <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:35:41 CST 2019. by MyBatis Generator, do not modify.
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
     -->
     insert into room
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -76,6 +78,12 @@
       </if>
       <if test="status != null">
         status,
+      </if>
+      <if test="base != null">
+        base,
+      </if>
+      <if test="flower != null">
+        flower,
       </if>
       <if test="east_username != null">
         east_username,
@@ -124,6 +132,12 @@
       <if test="status != null">
         #{status,jdbcType=INTEGER},
       </if>
+      <if test="base != null">
+        #{base,jdbcType=INTEGER},
+      </if>
+      <if test="flower != null">
+        #{flower,jdbcType=INTEGER},
+      </if>
       <if test="east_username != null">
         #{east_username,jdbcType=VARCHAR},
       </if>
@@ -164,7 +178,7 @@
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.chen.mahjong.dal.entity.Room">
     <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:35:41 CST 2019. by MyBatis Generator, do not modify.
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
     -->
     update room
     <set>
@@ -173,6 +187,12 @@
       </if>
       <if test="status != null">
         status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="base != null">
+        base = #{base,jdbcType=INTEGER},
+      </if>
+      <if test="flower != null">
+        flower = #{flower,jdbcType=INTEGER},
       </if>
       <if test="east_username != null">
         east_username = #{east_username,jdbcType=VARCHAR},
@@ -215,11 +235,13 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.chen.mahjong.dal.entity.Room">
     <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:35:41 CST 2019. by MyBatis Generator, do not modify.
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
     -->
     update room
     set room_name = #{room_name,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
+      base = #{base,jdbcType=INTEGER},
+      flower = #{flower,jdbcType=INTEGER},
       east_username = #{east_username,jdbcType=VARCHAR},
       south_username = #{south_username,jdbcType=VARCHAR},
       west_username = #{west_username,jdbcType=VARCHAR},
