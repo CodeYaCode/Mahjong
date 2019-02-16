@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chen.mahjong.dal.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.chen.mahjong.dal.entity.User">
+    <!--
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:41:08 CST 2019. by MyBatis Generator, do not modify.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="wechat" jdbcType="VARCHAR" property="wechat" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="score" jdbcType="DOUBLE" property="score" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:41:08 CST 2019. by MyBatis Generator, do not modify.
+    -->
+    id, username, wechat, password, score, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:41:08 CST 2019. by MyBatis Generator, do not modify.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:41:08 CST 2019. by MyBatis Generator, do not modify.
+    -->
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.chen.mahjong.dal.entity.User">
+    <!--
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:41:08 CST 2019. by MyBatis Generator, do not modify.
+    -->
+    insert into user (id, username, wechat, 
+      password, score, create_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{wechat,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{score,jdbcType=DOUBLE}, #{create_time,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.chen.mahjong.dal.entity.User">
+    <!--
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:41:08 CST 2019. by MyBatis Generator, do not modify.
+    -->
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="wechat != null">
+        wechat,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="score != null">
+        score,
+      </if>
+      <if test="create_time != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="wechat != null">
+        #{wechat,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null">
+        #{score,jdbcType=DOUBLE},
+      </if>
+      <if test="create_time != null">
+        #{create_time,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.chen.mahjong.dal.entity.User">
+    <!--
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:41:08 CST 2019. by MyBatis Generator, do not modify.
+    -->
+    update user
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="wechat != null">
+        wechat = #{wechat,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null">
+        score = #{score,jdbcType=DOUBLE},
+      </if>
+      <if test="create_time != null">
+        create_time = #{create_time,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.chen.mahjong.dal.entity.User">
+    <!--
+      WARNING - @mbg.generated  This element was generated on Sun Feb 17 00:41:08 CST 2019. by MyBatis Generator, do not modify.
+    -->
+    update user
+    set username = #{username,jdbcType=VARCHAR},
+      wechat = #{wechat,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      score = #{score,jdbcType=DOUBLE},
+      create_time = #{create_time,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
