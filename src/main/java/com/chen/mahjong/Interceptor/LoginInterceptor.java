@@ -22,7 +22,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         HttpSession session = request.getSession();
         if (null == session || StringUtils.isEmpty(session.getAttribute(WebConstants.SESSION_USER_NAME))) {
             System.err.println("login required.");
-            response.sendRedirect("/login");
+            response.sendError(403, "login required.");
             return false;
         }
         return true;

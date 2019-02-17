@@ -1,259 +1,266 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.chen.mahjong.dal.mapper.RoomMapper">
-  <resultMap id="BaseResultMap" type="com.chen.mahjong.dal.entity.Room">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="room_name" jdbcType="VARCHAR" property="room_name" />
-    <result column="status" jdbcType="INTEGER" property="status" />
-    <result column="base" jdbcType="INTEGER" property="base" />
-    <result column="flower" jdbcType="INTEGER" property="flower" />
-    <result column="east_username" jdbcType="VARCHAR" property="east_username" />
-    <result column="south_username" jdbcType="VARCHAR" property="south_username" />
-    <result column="west_username" jdbcType="VARCHAR" property="west_username" />
-    <result column="north_username" jdbcType="VARCHAR" property="north_username" />
-    <result column="east_score" jdbcType="DOUBLE" property="east_score" />
-    <result column="south_score" jdbcType="DOUBLE" property="south_score" />
-    <result column="west_score" jdbcType="DOUBLE" property="west_score" />
-    <result column="north_score" jdbcType="DOUBLE" property="north_score" />
-    <result column="creator" jdbcType="VARCHAR" property="creator" />
-    <result column="duration" jdbcType="DOUBLE" property="duration" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="update_time" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    id, room_name, status, base, flower, east_username, south_username, west_username, 
-    north_username, east_score, south_score, west_score, north_score, creator, duration, 
-    create_time, update_time
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    select 
-    <include refid="Base_Column_List" />
-    from room
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    delete from room
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.chen.mahjong.dal.entity.Room">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    insert into room (id, room_name, status, 
-      base, flower, east_username, 
-      south_username, west_username, north_username, 
-      east_score, south_score, west_score, 
-      north_score, creator, duration, 
-      create_time, update_time)
-    values (#{id,jdbcType=INTEGER}, #{room_name,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
-      #{base,jdbcType=INTEGER}, #{flower,jdbcType=INTEGER}, #{east_username,jdbcType=VARCHAR}, 
-      #{south_username,jdbcType=VARCHAR}, #{west_username,jdbcType=VARCHAR}, #{north_username,jdbcType=VARCHAR}, 
-      #{east_score,jdbcType=DOUBLE}, #{south_score,jdbcType=DOUBLE}, #{west_score,jdbcType=DOUBLE}, 
-      #{north_score,jdbcType=DOUBLE}, #{creator,jdbcType=VARCHAR}, #{duration,jdbcType=DOUBLE}, 
-      #{create_time,jdbcType=TIMESTAMP}, #{update_time,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.chen.mahjong.dal.entity.Room">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    insert into room
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="room_name != null">
-        room_name,
-      </if>
-      <if test="status != null">
-        status,
-      </if>
-      <if test="base != null">
-        base,
-      </if>
-      <if test="flower != null">
-        flower,
-      </if>
-      <if test="east_username != null">
-        east_username,
-      </if>
-      <if test="south_username != null">
-        south_username,
-      </if>
-      <if test="west_username != null">
-        west_username,
-      </if>
-      <if test="north_username != null">
-        north_username,
-      </if>
-      <if test="east_score != null">
-        east_score,
-      </if>
-      <if test="south_score != null">
-        south_score,
-      </if>
-      <if test="west_score != null">
-        west_score,
-      </if>
-      <if test="north_score != null">
-        north_score,
-      </if>
-      <if test="creator != null">
-        creator,
-      </if>
-      <if test="duration != null">
-        duration,
-      </if>
-      <if test="create_time != null">
-        create_time,
-      </if>
-      <if test="update_time != null">
-        update_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="room_name != null">
-        #{room_name,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        #{status,jdbcType=INTEGER},
-      </if>
-      <if test="base != null">
-        #{base,jdbcType=INTEGER},
-      </if>
-      <if test="flower != null">
-        #{flower,jdbcType=INTEGER},
-      </if>
-      <if test="east_username != null">
-        #{east_username,jdbcType=VARCHAR},
-      </if>
-      <if test="south_username != null">
-        #{south_username,jdbcType=VARCHAR},
-      </if>
-      <if test="west_username != null">
-        #{west_username,jdbcType=VARCHAR},
-      </if>
-      <if test="north_username != null">
-        #{north_username,jdbcType=VARCHAR},
-      </if>
-      <if test="east_score != null">
-        #{east_score,jdbcType=DOUBLE},
-      </if>
-      <if test="south_score != null">
-        #{south_score,jdbcType=DOUBLE},
-      </if>
-      <if test="west_score != null">
-        #{west_score,jdbcType=DOUBLE},
-      </if>
-      <if test="north_score != null">
-        #{north_score,jdbcType=DOUBLE},
-      </if>
-      <if test="creator != null">
-        #{creator,jdbcType=VARCHAR},
-      </if>
-      <if test="duration != null">
-        #{duration,jdbcType=DOUBLE},
-      </if>
-      <if test="create_time != null">
-        #{create_time,jdbcType=TIMESTAMP},
-      </if>
-      <if test="update_time != null">
-        #{update_time,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.chen.mahjong.dal.entity.Room">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    update room
-    <set>
-      <if test="room_name != null">
-        room_name = #{room_name,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
+    <resultMap id="BaseResultMap" type="com.chen.mahjong.dal.entity.Room">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="room_name" jdbcType="VARCHAR" property="roomName"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="base" jdbcType="INTEGER" property="base"/>
+        <result column="flower" jdbcType="INTEGER" property="flower"/>
+        <result column="east_username" jdbcType="VARCHAR" property="eastUsername"/>
+        <result column="south_username" jdbcType="VARCHAR" property="southUsername"/>
+        <result column="west_username" jdbcType="VARCHAR" property="westUsername"/>
+        <result column="north_username" jdbcType="VARCHAR" property="northUsername"/>
+        <result column="east_score" jdbcType="DOUBLE" property="eastScore"/>
+        <result column="south_score" jdbcType="DOUBLE" property="southScore"/>
+        <result column="west_score" jdbcType="DOUBLE" property="westScore"/>
+        <result column="north_score" jdbcType="DOUBLE" property="northScore"/>
+        <result column="creator" jdbcType="VARCHAR" property="creator"/>
+        <result column="duration" jdbcType="DOUBLE" property="duration"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        id, room_name, status, base, flower, east_username, south_username, west_username,
+        north_username, east_score, south_score, west_score, north_score, creator, duration,
+        create_time, update_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        select
+        <include refid="Base_Column_List"/>
+        from room
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        delete from room
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.chen.mahjong.dal.entity.Room">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        insert into room (id, room_name, status,
+        base, flower, east_username,
+        south_username, west_username, north_username,
+        east_score, south_score, west_score,
+        north_score, creator, duration,
+        create_time, update_time)
+        values (#{id,jdbcType=INTEGER}, #{roomName,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+        #{base,jdbcType=INTEGER}, #{flower,jdbcType=INTEGER}, #{eastUsername,jdbcType=VARCHAR},
+        #{southUsername,jdbcType=VARCHAR}, #{westUsername,jdbcType=VARCHAR}, #{northUsername,jdbcType=VARCHAR},
+        #{eastScore,jdbcType=DOUBLE}, #{southScore,jdbcType=DOUBLE}, #{westScore,jdbcType=DOUBLE},
+        #{northScore,jdbcType=DOUBLE}, #{creator,jdbcType=VARCHAR}, #{duration,jdbcType=DOUBLE},
+        #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" parameterType="com.chen.mahjong.dal.entity.Room">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        insert into room
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="roomName != null">
+                room_name,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="base != null">
+                base,
+            </if>
+            <if test="flower != null">
+                flower,
+            </if>
+            <if test="eastUsername != null">
+                east_username,
+            </if>
+            <if test="southUsername != null">
+                south_username,
+            </if>
+            <if test="westUsername != null">
+                west_username,
+            </if>
+            <if test="northUsername != null">
+                north_username,
+            </if>
+            <if test="eastScore != null">
+                east_score,
+            </if>
+            <if test="southScore != null">
+                south_score,
+            </if>
+            <if test="westScore != null">
+                west_score,
+            </if>
+            <if test="northScore != null">
+                north_score,
+            </if>
+            <if test="creator != null">
+                creator,
+            </if>
+            <if test="duration != null">
+                duration,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="roomName != null">
+                #{roomName,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="base != null">
+                #{base,jdbcType=INTEGER},
+            </if>
+            <if test="flower != null">
+                #{flower,jdbcType=INTEGER},
+            </if>
+            <if test="eastUsername != null">
+                #{eastUsername,jdbcType=VARCHAR},
+            </if>
+            <if test="southUsername != null">
+                #{southUsername,jdbcType=VARCHAR},
+            </if>
+            <if test="westUsername != null">
+                #{westUsername,jdbcType=VARCHAR},
+            </if>
+            <if test="northUsername != null">
+                #{northUsername,jdbcType=VARCHAR},
+            </if>
+            <if test="eastScore != null">
+                #{eastScore,jdbcType=DOUBLE},
+            </if>
+            <if test="southScore != null">
+                #{southScore,jdbcType=DOUBLE},
+            </if>
+            <if test="westScore != null">
+                #{westScore,jdbcType=DOUBLE},
+            </if>
+            <if test="northScore != null">
+                #{northScore,jdbcType=DOUBLE},
+            </if>
+            <if test="creator != null">
+                #{creator,jdbcType=VARCHAR},
+            </if>
+            <if test="duration != null">
+                #{duration,jdbcType=DOUBLE},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.chen.mahjong.dal.entity.Room">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        update room
+        <set>
+            <if test="roomName != null">
+                room_name = #{roomName,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="base != null">
+                base = #{base,jdbcType=INTEGER},
+            </if>
+            <if test="flower != null">
+                flower = #{flower,jdbcType=INTEGER},
+            </if>
+            <if test="eastUsername != null">
+                east_username = #{eastUsername,jdbcType=VARCHAR},
+            </if>
+            <if test="southUsername != null">
+                south_username = #{southUsername,jdbcType=VARCHAR},
+            </if>
+            <if test="westUsername != null">
+                west_username = #{westUsername,jdbcType=VARCHAR},
+            </if>
+            <if test="northUsername != null">
+                north_username = #{northUsername,jdbcType=VARCHAR},
+            </if>
+            <if test="eastScore != null">
+                east_score = #{eastScore,jdbcType=DOUBLE},
+            </if>
+            <if test="southScore != null">
+                south_score = #{southScore,jdbcType=DOUBLE},
+            </if>
+            <if test="westScore != null">
+                west_score = #{westScore,jdbcType=DOUBLE},
+            </if>
+            <if test="northScore != null">
+                north_score = #{northScore,jdbcType=DOUBLE},
+            </if>
+            <if test="creator != null">
+                creator = #{creator,jdbcType=VARCHAR},
+            </if>
+            <if test="duration != null">
+                duration = #{duration,jdbcType=DOUBLE},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.chen.mahjong.dal.entity.Room">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        update room
+        set room_name = #{roomName,jdbcType=VARCHAR},
         status = #{status,jdbcType=INTEGER},
-      </if>
-      <if test="base != null">
         base = #{base,jdbcType=INTEGER},
-      </if>
-      <if test="flower != null">
         flower = #{flower,jdbcType=INTEGER},
-      </if>
-      <if test="east_username != null">
-        east_username = #{east_username,jdbcType=VARCHAR},
-      </if>
-      <if test="south_username != null">
-        south_username = #{south_username,jdbcType=VARCHAR},
-      </if>
-      <if test="west_username != null">
-        west_username = #{west_username,jdbcType=VARCHAR},
-      </if>
-      <if test="north_username != null">
-        north_username = #{north_username,jdbcType=VARCHAR},
-      </if>
-      <if test="east_score != null">
-        east_score = #{east_score,jdbcType=DOUBLE},
-      </if>
-      <if test="south_score != null">
-        south_score = #{south_score,jdbcType=DOUBLE},
-      </if>
-      <if test="west_score != null">
-        west_score = #{west_score,jdbcType=DOUBLE},
-      </if>
-      <if test="north_score != null">
-        north_score = #{north_score,jdbcType=DOUBLE},
-      </if>
-      <if test="creator != null">
+        east_username = #{eastUsername,jdbcType=VARCHAR},
+        south_username = #{southUsername,jdbcType=VARCHAR},
+        west_username = #{westUsername,jdbcType=VARCHAR},
+        north_username = #{northUsername,jdbcType=VARCHAR},
+        east_score = #{eastScore,jdbcType=DOUBLE},
+        south_score = #{southScore,jdbcType=DOUBLE},
+        west_score = #{westScore,jdbcType=DOUBLE},
+        north_score = #{northScore,jdbcType=DOUBLE},
         creator = #{creator,jdbcType=VARCHAR},
-      </if>
-      <if test="duration != null">
         duration = #{duration,jdbcType=DOUBLE},
-      </if>
-      <if test="create_time != null">
-        create_time = #{create_time,jdbcType=TIMESTAMP},
-      </if>
-      <if test="update_time != null">
-        update_time = #{update_time,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.chen.mahjong.dal.entity.Room">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 02:47:10 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    update room
-    set room_name = #{room_name,jdbcType=VARCHAR},
-      status = #{status,jdbcType=INTEGER},
-      base = #{base,jdbcType=INTEGER},
-      flower = #{flower,jdbcType=INTEGER},
-      east_username = #{east_username,jdbcType=VARCHAR},
-      south_username = #{south_username,jdbcType=VARCHAR},
-      west_username = #{west_username,jdbcType=VARCHAR},
-      north_username = #{north_username,jdbcType=VARCHAR},
-      east_score = #{east_score,jdbcType=DOUBLE},
-      south_score = #{south_score,jdbcType=DOUBLE},
-      west_score = #{west_score,jdbcType=DOUBLE},
-      north_score = #{north_score,jdbcType=DOUBLE},
-      creator = #{creator,jdbcType=VARCHAR},
-      duration = #{duration,jdbcType=DOUBLE},
-      create_time = #{create_time,jdbcType=TIMESTAMP},
-      update_time = #{update_time,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM
+        room
+        WHERE status = 1
+    </select>
 </mapper>

@@ -18,6 +18,6 @@ public class WebAppConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns(Arrays.asList("/login","/api/user/create", "/api/user/login", "/api/user/list"));
+                .excludePathPatterns(Arrays.asList("/login","/api/user/create", "/api/user/login", "/api/user/list", "/api/wechat/login"));
     }
 }

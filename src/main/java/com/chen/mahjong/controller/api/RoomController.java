@@ -1,10 +1,8 @@
 package com.chen.mahjong.controller.api;
 
+import com.chen.mahjong.service.IRoomService;
 import com.chen.mahjong.util.ResponseUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -16,13 +14,16 @@ import javax.annotation.Resource;
 @RequestMapping("/api/room")
 public class RoomController {
 
+    @Resource
+    private IRoomService roomService;
+
     @PostMapping("/create")
-    public String create() {
-        return ResponseUtils.success().toJson();
+    public String create(@RequestParam("roomName") String roomName) {
+        return roomService.create(roomName).toJson();
     }
 
     @GetMapping("/list")
     public String listAll() {
-        return ResponseUtils.success().toJson();
+        return roomService.list().toJson();
     }
 }

@@ -1,42 +1,44 @@
 package com.chen.mahjong.dal.mapper;
 
-import com.chen.mahjong.dal.entity.User;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import com.chen.mahjong.dal.entity.User;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UserMapper {
-    /**
-     * @mbg.generated Sun Feb 17 01:44:55 CST 2019
-     */
-    int deleteByPrimaryKey(Integer id);
 
     /**
-     * @mbg.generated Sun Feb 17 01:44:55 CST 2019
-     */
-    int insert(User record);
-
-    /**
-     * @mbg.generated Sun Feb 17 01:44:55 CST 2019
-     */
-    int insertSelective(User record);
-
-    /**
-     * @mbg.generated Sun Feb 17 01:44:55 CST 2019
+     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
      */
     User selectByPrimaryKey(Integer id);
 
     /**
-     * @mbg.generated Sun Feb 17 01:44:55 CST 2019
+     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
      */
-    int updateByPrimaryKeySelective(User record);
+    int deleteByPrimaryKey(Integer id);
 
     /**
-     * @mbg.generated Sun Feb 17 01:44:55 CST 2019
+     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     */
+    int insertSelective(User record);
+
+    /**
+     * 根据 username 查询
+     * @param username username
+     * @return user
+     */
+    User selectByUsername(@Param("username") String username);
+
+    /**
+     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
      */
     int updateByPrimaryKey(User record);
+
+    /**
+     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     */
+    int updateByPrimaryKeySelective(User record);
 
     /**
      * 查询所有用户
@@ -46,9 +48,7 @@ public interface UserMapper {
     List<User> selectAll();
 
     /**
-     * 根据 username 查询
-     * @param username username
-     * @return user
+     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
      */
-    User selectByUsername(@Param("username") String username);
+    int insert(User record);
 }

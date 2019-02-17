@@ -48,9 +48,10 @@ public class UserServiceImpl implements IUserService {
         }
         HttpSession session = request.getSession();
         session.setAttribute(WebConstants.SESSION_USER_NAME, username);
-        user.setLast_login_time(new Date());
+        String sessionId = session.getId();
+        user.setLastLoginTime(new Date());
         userMapper.updateByPrimaryKeySelective(user);
-        return ResponseUtils.success();
+        return ResponseUtils.success().data(WebConstants.SESSION_ID, sessionId);
     }
 
     @Override
