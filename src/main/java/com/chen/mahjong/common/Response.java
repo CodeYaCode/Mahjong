@@ -42,6 +42,22 @@ public class Response {
         return this;
     }
 
+    public String getString(String key) {
+        return null == this.get(key) ? null : String.valueOf(this.get(key));
+    }
+
+    public Integer getInteger(String key) {
+        return null == this.get(key) ? null : Integer.valueOf(String.valueOf(this.get(key)));
+    }
+
+    public <T> T get(String key, Class<T> clazz) {
+        return null == this.get(key) ? null : (T) this.get(key);
+    }
+
+    public Object get(String key) {
+        return this.data.getOrDefault(key, null);
+    }
+
     public Response message(String message) {
         this.message = message;
         return this;

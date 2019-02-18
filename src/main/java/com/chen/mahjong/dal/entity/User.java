@@ -12,49 +12,49 @@ import java.util.Date;
 public class User implements Serializable {
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     private static final long serialVersionUID = 1L;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     private Integer id;
 
     /**
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
+     */
+    private String openid;
+
+    /**
      * 总分数
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     private Double score;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     private String password;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
-     */
-    private String wechat;
-
-    /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     private String username;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     private Date lastLoginTime;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
-    private String token;
+    private Integer roomId;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     private Date createTime;
 
@@ -63,7 +63,7 @@ public class User implements Serializable {
      *
      * @return the value of mahjong..user.username
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public String getUsername() {
         return username;
@@ -74,7 +74,7 @@ public class User implements Serializable {
      *
      * @return the value of mahjong..user.create_time
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public Date getCreateTime() {
         return createTime;
@@ -85,7 +85,7 @@ public class User implements Serializable {
      *
      * @param username the value for mahjong..user.username
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public void setUsername(String username) {
         this.username = username;
@@ -96,17 +96,36 @@ public class User implements Serializable {
      *
      * @param score the value for mahjong..user.score
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public void setScore(Double score) {
         this.score = score;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * This method returns the value of the database column mahjong..user.room_id
+     *
+     * @return the value of mahjong..user.room_id
+     *
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
+     */
+    public Integer getRoomId() {
+        return roomId;
+    }
+
+    /**
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public User withPassword(String password) {
         this.setPassword(password);
+        return this;
+    }
+
+    /**
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
+     */
+    public User withOpenid(String openid) {
+        this.setOpenid(openid);
         return this;
     }
 
@@ -115,22 +134,14 @@ public class User implements Serializable {
      *
      * @param password the value for mahjong..user.password
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public void setPassword(String password) {
         this.password = password;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
-     */
-    public User withWechat(String wechat) {
-        this.setWechat(wechat);
-        return this;
-    }
-
-    /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public User withScore(Double score) {
         this.setScore(score);
@@ -142,21 +153,32 @@ public class User implements Serializable {
      *
      * @return the value of mahjong..user.score
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public Double getScore() {
         return score;
     }
 
     /**
-     * This method returns the value of the database column mahjong..user.token
+     * This method returns the value of the database column mahjong..user.openid
      *
-     * @return the value of mahjong..user.token
+     * @return the value of mahjong..user.openid
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
-    public String getToken() {
-        return token;
+    public String getOpenid() {
+        return openid;
+    }
+
+    /**
+     * This method sets the value of the database column mahjong..user.room_id
+     *
+     * @param roomId the value for mahjong..user.room_id
+     *
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
+     */
+    public void setRoomId(Integer roomId) {
+        this.roomId = roomId;
     }
 
     /**
@@ -164,14 +186,14 @@ public class User implements Serializable {
      *
      * @return the value of mahjong..user.last_login_time
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public Date getLastLoginTime() {
         return lastLoginTime;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public User withId(Integer id) {
         this.setId(id);
@@ -179,18 +201,10 @@ public class User implements Serializable {
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public User withUsername(String username) {
         this.setUsername(username);
-        return this;
-    }
-
-    /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
-     */
-    public User withToken(String token) {
-        this.setToken(token);
         return this;
     }
 
@@ -199,14 +213,14 @@ public class User implements Serializable {
      *
      * @return the value of mahjong..user.id
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     @Override
     public String toString() {
@@ -216,8 +230,8 @@ public class User implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", username=").append(username);
-        sb.append(", wechat=").append(wechat);
-        sb.append(", token=").append(token);
+        sb.append(", openid=").append(openid);
+        sb.append(", roomId=").append(roomId);
         sb.append(", password=").append(password);
         sb.append(", score=").append(score);
         sb.append(", lastLoginTime=").append(lastLoginTime);
@@ -231,7 +245,7 @@ public class User implements Serializable {
      *
      * @param createTime the value for mahjong..user.create_time
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
@@ -242,10 +256,21 @@ public class User implements Serializable {
      *
      * @param lastLoginTime the value for mahjong..user.last_login_time
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public void setLastLoginTime(Date lastLoginTime) {
         this.lastLoginTime = lastLoginTime;
+    }
+
+    /**
+     * This method sets the value of the database column mahjong..user.openid
+     *
+     * @param openid the value for mahjong..user.openid
+     *
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
+     */
+    public void setOpenid(String openid) {
+        this.openid = openid;
     }
 
     /**
@@ -253,32 +278,10 @@ public class User implements Serializable {
      *
      * @param id the value for mahjong..user.id
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    /**
-     * This method sets the value of the database column mahjong..user.wechat
-     *
-     * @param wechat the value for mahjong..user.wechat
-     *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
-     */
-    public void setWechat(String wechat) {
-        this.wechat = wechat;
-    }
-
-    /**
-     * This method sets the value of the database column mahjong..user.token
-     *
-     * @param token the value for mahjong..user.token
-     *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
-     */
-    public void setToken(String token) {
-        this.token = token;
     }
 
     /**
@@ -286,14 +289,14 @@ public class User implements Serializable {
      *
      * @return the value of mahjong..user.password
      *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public String getPassword() {
         return password;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public User withLastLoginTime(Date lastLoginTime) {
         this.setLastLoginTime(lastLoginTime);
@@ -301,18 +304,15 @@ public class User implements Serializable {
     }
 
     /**
-     * This method returns the value of the database column mahjong..user.wechat
-     *
-     * @return the value of mahjong..user.wechat
-     *
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
-    public String getWechat() {
-        return wechat;
+    public User withRoomId(Integer roomId) {
+        this.setRoomId(roomId);
+        return this;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:33 CST 2019
+     * @mbg.generated Mon Feb 18 23:51:49 CST 2019
      */
     public User withCreateTime(Date createTime) {
         this.setCreateTime(createTime);

@@ -1,157 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.chen.mahjong.dal.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="com.chen.mahjong.dal.entity.User">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:33 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="wechat" jdbcType="VARCHAR" property="wechat" />
-    <result column="token" jdbcType="VARCHAR" property="token" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="score" jdbcType="DOUBLE" property="score" />
-    <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:33 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    id, username, wechat, token, password, score, last_login_time, create_time
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:33 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    select 
-    <include refid="Base_Column_List" />
-    from user
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:33 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    delete from user
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.chen.mahjong.dal.entity.User">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:33 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    insert into user (id, username, wechat, 
-      token, password, score, 
-      last_login_time, create_time)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{wechat,jdbcType=VARCHAR}, 
-      #{token,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{score,jdbcType=DOUBLE}, 
-      #{lastLoginTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.chen.mahjong.dal.entity.User">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:33 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    insert into user
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="username != null">
-        username,
-      </if>
-      <if test="wechat != null">
-        wechat,
-      </if>
-      <if test="token != null">
-        token,
-      </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="score != null">
-        score,
-      </if>
-      <if test="lastLoginTime != null">
-        last_login_time,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="wechat != null">
-        #{wechat,jdbcType=VARCHAR},
-      </if>
-      <if test="token != null">
-        #{token,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="score != null">
-        #{score,jdbcType=DOUBLE},
-      </if>
-      <if test="lastLoginTime != null">
-        #{lastLoginTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.chen.mahjong.dal.entity.User">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:33 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    update user
-    <set>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="wechat != null">
-        wechat = #{wechat,jdbcType=VARCHAR},
-      </if>
-      <if test="token != null">
-        token = #{token,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
+    <resultMap id="BaseResultMap" type="com.chen.mahjong.dal.entity.User">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:51:49 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="openid" jdbcType="VARCHAR" property="openid"/>
+        <result column="room_id" jdbcType="INTEGER" property="roomId"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="score" jdbcType="DOUBLE" property="score"/>
+        <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:51:49 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        id, username, openid, room_id, password, score, last_login_time, create_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:51:49 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:51:49 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        delete from user
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.chen.mahjong.dal.entity.User" useGeneratedKeys="true" keyProperty="id">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:51:49 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        insert into user (id, username, openid,
+        room_id, password, score,
+        last_login_time, create_time)
+        values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{openid,jdbcType=VARCHAR},
+        #{roomId,jdbcType=INTEGER}, #{password,jdbcType=VARCHAR}, #{score,jdbcType=DOUBLE},
+        #{lastLoginTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" parameterType="com.chen.mahjong.dal.entity.User" useGeneratedKeys="true"
+            keyProperty="id">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:51:49 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="username != null">
+                username,
+            </if>
+            <if test="openid != null">
+                openid,
+            </if>
+            <if test="roomId != null">
+                room_id,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="score != null">
+                score,
+            </if>
+            <if test="lastLoginTime != null">
+                last_login_time,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="openid != null">
+                #{openid,jdbcType=VARCHAR},
+            </if>
+            <if test="roomId != null">
+                #{roomId,jdbcType=INTEGER},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="score != null">
+                #{score,jdbcType=DOUBLE},
+            </if>
+            <if test="lastLoginTime != null">
+                #{lastLoginTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.chen.mahjong.dal.entity.User">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:51:49 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        update user
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="openid != null">
+                openid = #{openid,jdbcType=VARCHAR},
+            </if>
+            <if test="roomId != null">
+                room_id = #{roomId,jdbcType=INTEGER},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="score != null">
+                score = #{score,jdbcType=DOUBLE},
+            </if>
+            <if test="lastLoginTime != null">
+                last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.chen.mahjong.dal.entity.User">
+        <!--
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:51:49 CST 2019. by MyBatis Generator, do not modify.
+        -->
+        update user
+        set username = #{username,jdbcType=VARCHAR},
+        openid = #{openid,jdbcType=VARCHAR},
+        room_id = #{roomId,jdbcType=INTEGER},
         password = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="score != null">
         score = #{score,jdbcType=DOUBLE},
-      </if>
-      <if test="lastLoginTime != null">
         last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.chen.mahjong.dal.entity.User">
-    <!--
-      WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:33 CST 2019. by MyBatis Generator, do not modify.
-    -->
-    update user
-    set username = #{username,jdbcType=VARCHAR},
-      wechat = #{wechat,jdbcType=VARCHAR},
-      token = #{token,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      score = #{score,jdbcType=DOUBLE},
-      last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+        create_time = #{createTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
     <select id="selectAll" resultMap="BaseResultMap">
         SELECT
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         FROM
         user
         ORDER BY
@@ -159,11 +160,21 @@
     </select>
     <select id="selectByUsername" resultMap="BaseResultMap">
         SELECT
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         FROM
         user
         WHERE
         username = #{username}
+        ORDER BY
+        last_login_time
+    </select>
+    <select id="selectByOpenId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        user
+        WHERE
+        openid = #{openid}
         ORDER BY
         last_login_time
     </select>

@@ -1,4 +1,4 @@
-package com.chen.mahjong.controller;
+package com.chen.mahjong.controller.api;
 
 import com.chen.mahjong.service.IWechatService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +20,8 @@ public class WechatController {
     private IWechatService wechatService;
 
     @GetMapping("/login")
-    public String login(@RequestParam("code") String code) {
+    public String login(@RequestParam("code") String code, @RequestParam("nickname") String nickname) {
 
-        return wechatService.login(code).toJson();
+        return wechatService.login(code, nickname).toJson();
     }
 }

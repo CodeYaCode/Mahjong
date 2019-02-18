@@ -4,7 +4,9 @@ import com.chen.mahjong.common.Response;
 import com.chen.mahjong.constant.WebConstants;
 import com.chen.mahjong.constant.enums.EnumRoomStatus;
 import com.chen.mahjong.dal.entity.Room;
+import com.chen.mahjong.dal.entity.User;
 import com.chen.mahjong.dal.mapper.RoomMapper;
+import com.chen.mahjong.dal.mapper.UserMapper;
 import com.chen.mahjong.service.IRoomService;
 import com.chen.mahjong.util.ResponseUtils;
 import org.springframework.stereotype.Service;
@@ -24,21 +26,34 @@ public class RoomServiceImpl implements IRoomService {
     private RoomMapper roomMapper;
 
     @Resource
+    private UserMapper userMapper;
+
+    @Resource
     private HttpServletRequest request;
 
+    /**
+     * 房间后缀
+     */
+    private final static String ROOM_NAME_SUFFIX = "的研究室";
+
     @Override
-    public Response create(String roomName) {
+    public Response create(String nickname) {
         HttpSession session = request.getSession();
         if (null == session) {
             return ResponseUtils.fail();
         }
-        String username = String.valueOf(session.getAttribute(WebConstants.SESSION_USER_NAME));
         Room room = new Room();
-        room.setRoomName(roomName);
+        room.setRoomName(nickname + ROOM_NAME_SUFFIX);
         room.setStatus(EnumRoomStatus.OPENING.code());
-        room.setCreator(username);
+        room.setCreator(nickname);
 
         roomMapper.insert(room);
+        int userId = Integer.valueOf(String.valueOf(session.getAttribute(WebConstants.USER_ID)));
+        int roomId = room.getId();
+        User user = new User();
+        user.setId(userId);
+        user.setRoomId(roomId);
+        userMapper.updateByPrimaryKeySelective(user);
         return ResponseUtils.success().data("room", room);
     }
 

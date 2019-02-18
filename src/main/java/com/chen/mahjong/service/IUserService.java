@@ -26,13 +26,15 @@ public interface IUserService {
     /**
      * 登录
      *
-     * @param username username
+     * @param openid   openid
+     * @param nickname nickname
      * @return response
      */
-    Response login(String username);
+    Response login(String openid, String nickname);
 
     /**
      * 登出
+     *
      * @return response
      */
     Response logout();

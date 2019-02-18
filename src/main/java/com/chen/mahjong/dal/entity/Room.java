@@ -12,108 +12,108 @@ import java.util.Date;
 public class Room implements Serializable {
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private String northUsername;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private Double eastScore;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private Double southScore;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private Integer id;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private static final long serialVersionUID = 1L;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private Double northScore;
 
     /**
      * 名字
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private String roomName;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private String westUsername;
 
     /**
      * 创建时间
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private Date createTime;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private String eastUsername;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private String southUsername;
 
     /**
      * 持续时间
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private Double duration;
 
     /**
      * 一个花多少钱
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private Integer flower;
 
     /**
      * 更新时间
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private Date updateTime;
 
     /**
      * 创建人
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private String creator;
 
     /**
      * 状态
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private Integer status;
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private Double westScore;
 
     /**
      * 底
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     private Integer base;
 
@@ -122,7 +122,7 @@ public class Room implements Serializable {
      *
      * @param northScore the value for mahjong..room.north_score
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setNorthScore(Double northScore) {
         this.northScore = northScore;
@@ -133,7 +133,7 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.west_username
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public String getWestUsername() {
         return westUsername;
@@ -144,14 +144,14 @@ public class Room implements Serializable {
      *
      * @param base the value for mahjong..room.base
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setBase(Integer base) {
         this.base = base;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withUpdateTime(Date updateTime) {
         this.setUpdateTime(updateTime);
@@ -163,7 +163,7 @@ public class Room implements Serializable {
      *
      * @param southScore the value for mahjong..room.south_score
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setSouthScore(Double southScore) {
         this.southScore = southScore;
@@ -174,7 +174,7 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.east_username
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public String getEastUsername() {
         return eastUsername;
@@ -185,7 +185,7 @@ public class Room implements Serializable {
      *
      * @param roomName the value for mahjong..room.room_name
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setRoomName(String roomName) {
         this.roomName = roomName;
@@ -196,14 +196,14 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.south_username
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public String getSouthUsername() {
         return southUsername;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withCreator(String creator) {
         this.setCreator(creator);
@@ -215,7 +215,7 @@ public class Room implements Serializable {
      *
      * @param eastScore the value for mahjong..room.east_score
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setEastScore(Double eastScore) {
         this.eastScore = eastScore;
@@ -226,7 +226,7 @@ public class Room implements Serializable {
      *
      * @param westScore the value for mahjong..room.west_score
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setWestScore(Double westScore) {
         this.westScore = westScore;
@@ -237,7 +237,7 @@ public class Room implements Serializable {
      *
      * @param southUsername the value for mahjong..room.south_username
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setSouthUsername(String southUsername) {
         this.southUsername = southUsername;
@@ -248,7 +248,7 @@ public class Room implements Serializable {
      *
      * @param id the value for mahjong..room.id
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setId(Integer id) {
         this.id = id;
@@ -259,7 +259,7 @@ public class Room implements Serializable {
      *
      * @param flower the value for mahjong..room.flower
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setFlower(Integer flower) {
         this.flower = flower;
@@ -270,7 +270,7 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.id
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Integer getId() {
         return id;
@@ -281,7 +281,7 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.create_time
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Date getCreateTime() {
         return createTime;
@@ -292,7 +292,7 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.flower
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Integer getFlower() {
         return flower;
@@ -303,7 +303,7 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.room_name
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public String getRoomName() {
         return roomName;
@@ -314,7 +314,7 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.south_score
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Double getSouthScore() {
         return southScore;
@@ -325,14 +325,14 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.west_score
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Double getWestScore() {
         return westScore;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withEastUsername(String eastUsername) {
         this.setEastUsername(eastUsername);
@@ -344,7 +344,7 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.status
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Integer getStatus() {
         return status;
@@ -355,14 +355,14 @@ public class Room implements Serializable {
      *
      * @param updateTime the value for mahjong..room.update_time
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withStatus(Integer status) {
         this.setStatus(status);
@@ -370,7 +370,7 @@ public class Room implements Serializable {
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withBase(Integer base) {
         this.setBase(base);
@@ -382,14 +382,14 @@ public class Room implements Serializable {
      *
      * @param eastUsername the value for mahjong..room.east_username
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setEastUsername(String eastUsername) {
         this.eastUsername = eastUsername;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withSouthUsername(String southUsername) {
         this.setSouthUsername(southUsername);
@@ -401,7 +401,7 @@ public class Room implements Serializable {
      *
      * @param creator the value for mahjong..room.creator
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setCreator(String creator) {
         this.creator = creator;
@@ -412,7 +412,7 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.base
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Integer getBase() {
         return base;
@@ -423,14 +423,14 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.east_score
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Double getEastScore() {
         return eastScore;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withEastScore(Double eastScore) {
         this.setEastScore(eastScore);
@@ -438,7 +438,7 @@ public class Room implements Serializable {
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withDuration(Double duration) {
         this.setDuration(duration);
@@ -446,7 +446,7 @@ public class Room implements Serializable {
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withWestScore(Double westScore) {
         this.setWestScore(westScore);
@@ -454,7 +454,7 @@ public class Room implements Serializable {
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withWestUsername(String westUsername) {
         this.setWestUsername(westUsername);
@@ -462,7 +462,7 @@ public class Room implements Serializable {
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withNorthScore(Double northScore) {
         this.setNorthScore(northScore);
@@ -474,14 +474,14 @@ public class Room implements Serializable {
      *
      * @param northUsername the value for mahjong..room.north_username
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setNorthUsername(String northUsername) {
         this.northUsername = northUsername;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withSouthScore(Double southScore) {
         this.setSouthScore(southScore);
@@ -489,7 +489,7 @@ public class Room implements Serializable {
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withCreateTime(Date createTime) {
         this.setCreateTime(createTime);
@@ -501,7 +501,7 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.duration
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Double getDuration() {
         return duration;
@@ -512,7 +512,7 @@ public class Room implements Serializable {
      *
      * @param westUsername the value for mahjong..room.west_username
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setWestUsername(String westUsername) {
         this.westUsername = westUsername;
@@ -523,14 +523,14 @@ public class Room implements Serializable {
      *
      * @param status the value for mahjong..room.status
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setStatus(Integer status) {
         this.status = status;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withId(Integer id) {
         this.setId(id);
@@ -538,7 +538,7 @@ public class Room implements Serializable {
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     @Override
     public String toString() {
@@ -568,7 +568,7 @@ public class Room implements Serializable {
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withRoomName(String roomName) {
         this.setRoomName(roomName);
@@ -576,7 +576,7 @@ public class Room implements Serializable {
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withFlower(Integer flower) {
         this.setFlower(flower);
@@ -588,7 +588,7 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.update_time
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Date getUpdateTime() {
         return updateTime;
@@ -599,7 +599,7 @@ public class Room implements Serializable {
      *
      * @param duration the value for mahjong..room.duration
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setDuration(Double duration) {
         this.duration = duration;
@@ -610,7 +610,7 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.creator
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public String getCreator() {
         return creator;
@@ -621,7 +621,7 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.north_username
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public String getNorthUsername() {
         return northUsername;
@@ -632,14 +632,14 @@ public class Room implements Serializable {
      *
      * @return the value of mahjong..room.north_score
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Double getNorthScore() {
         return northScore;
     }
 
     /**
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public Room withNorthUsername(String northUsername) {
         this.setNorthUsername(northUsername);
@@ -651,7 +651,7 @@ public class Room implements Serializable {
      *
      * @param createTime the value for mahjong..room.create_time
      *
-     * @mbg.generated Sun Feb 17 17:06:55 CST 2019
+     * @mbg.generated Mon Feb 18 23:49:50 CST 2019
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;

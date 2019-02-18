@@ -20,7 +20,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
         HttpSession session = request.getSession();
-        if (null == session || StringUtils.isEmpty(session.getAttribute(WebConstants.SESSION_USER_NAME))) {
+        if (null == session || StringUtils.isEmpty(session.getAttribute(WebConstants.USER_ID))) {
             System.err.println("login required.");
             response.sendError(403, "login required.");
             return false;

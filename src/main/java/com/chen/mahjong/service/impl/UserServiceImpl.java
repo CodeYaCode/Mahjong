@@ -41,24 +41,34 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public Response login(String username) {
-        User user = userMapper.selectByUsername(username);
-        if (null == user) {
-            return ResponseUtils.fail().message("用户不存在");
-        }
+    public Response login(String openid, String nickname) {
         HttpSession session = request.getSession();
-        session.setAttribute(WebConstants.SESSION_USER_NAME, username);
         String sessionId = session.getId();
-        user.setLastLoginTime(new Date());
-        userMapper.updateByPrimaryKeySelective(user);
-        return ResponseUtils.success().data(WebConstants.SESSION_ID, sessionId);
+        User user = userMapper.selectByOpenId(openid);
+        if (null == user) {
+            // 第一次登录的用户
+            user = new User();
+            user.setOpenid(openid);
+            user.setUsername(nickname);
+            user.setScore(0.0);
+            user.setLastLoginTime(new Date());
+            userMapper.insert(user);
+        } else {
+            // 更新一下用户名和最后登陆时间
+            user.setUsername(nickname);
+            user.setLastLoginTime(new Date());
+            userMapper.updateByPrimaryKey(user);
+        }
+        session.setAttribute(WebConstants.USER_ID, user.getId());
+
+        return ResponseUtils.success().data(WebConstants.SESSION_ID, sessionId).data(WebConstants.USER, user);
     }
 
     @Override
     public Response logout() {
         HttpSession session = request.getSession();
         if (null != session) {
-            session.removeAttribute(WebConstants.SESSION_USER_NAME);
+            session.removeAttribute(WebConstants.USER_ID);
         }
         return ResponseUtils.success();
     }

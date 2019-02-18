@@ -1,6 +1,7 @@
 package com.chen.mahjong.service;
 
 import com.chen.mahjong.common.Response;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author LiuChen
@@ -10,10 +11,10 @@ public interface IRoomService {
 
     /**
      * 创建房间
-     * @param roomName roomName
+     * @param nickname nickname
      * @return response
      */
-    Response create(String roomName);
+    Response create(String nickname);
 
     /**
      * 列出所有的房间

@@ -10,8 +10,10 @@ public interface IWechatService {
 
     /**
      * 登录微信服务器，拿到用户的 openId 等信息
-     * @param code code
+     *
+     * @param code     code
+     * @param nickname nickname
      * @return response
      */
-    Response login(String code);
+    Response login(String code, String nickname);
 }

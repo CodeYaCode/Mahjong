@@ -3,7 +3,7 @@
 <mapper namespace="com.chen.mahjong.dal.mapper.RoomMapper">
     <resultMap id="BaseResultMap" type="com.chen.mahjong.dal.entity.Room">
         <!--
-          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:49:50 CST 2019. by MyBatis Generator, do not modify.
         -->
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="room_name" jdbcType="VARCHAR" property="roomName"/>
@@ -25,7 +25,7 @@
     </resultMap>
     <sql id="Base_Column_List">
         <!--
-          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:49:50 CST 2019. by MyBatis Generator, do not modify.
         -->
         id, room_name, status, base, flower, east_username, south_username, west_username,
         north_username, east_score, south_score, west_score, north_score, creator, duration,
@@ -33,7 +33,7 @@
     </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         <!--
-          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:49:50 CST 2019. by MyBatis Generator, do not modify.
         -->
         select
         <include refid="Base_Column_List"/>
@@ -42,14 +42,14 @@
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         <!--
-          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:49:50 CST 2019. by MyBatis Generator, do not modify.
         -->
         delete from room
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.chen.mahjong.dal.entity.Room">
+    <insert id="insert" parameterType="com.chen.mahjong.dal.entity.Room" useGeneratedKeys="true" keyProperty="id">
         <!--
-          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:49:50 CST 2019. by MyBatis Generator, do not modify.
         -->
         insert into room (id, room_name, status,
         base, flower, east_username,
@@ -64,9 +64,10 @@
         #{northScore,jdbcType=DOUBLE}, #{creator,jdbcType=VARCHAR}, #{duration,jdbcType=DOUBLE},
         #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
     </insert>
-    <insert id="insertSelective" parameterType="com.chen.mahjong.dal.entity.Room">
+    <insert id="insertSelective" parameterType="com.chen.mahjong.dal.entity.Room" useGeneratedKeys="true"
+            keyProperty="id">
         <!--
-          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:49:50 CST 2019. by MyBatis Generator, do not modify.
         -->
         insert into room
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -178,7 +179,7 @@
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="com.chen.mahjong.dal.entity.Room">
         <!--
-          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:49:50 CST 2019. by MyBatis Generator, do not modify.
         -->
         update room
         <set>
@@ -235,7 +236,7 @@
     </update>
     <update id="updateByPrimaryKey" parameterType="com.chen.mahjong.dal.entity.Room">
         <!--
-          WARNING - @mbg.generated  This element was generated on Sun Feb 17 17:06:55 CST 2019. by MyBatis Generator, do not modify.
+          WARNING - @mbg.generated  This element was generated on Mon Feb 18 23:49:50 CST 2019. by MyBatis Generator, do not modify.
         -->
         update room
         set room_name = #{roomName,jdbcType=VARCHAR},
@@ -258,7 +259,7 @@
     </update>
     <select id="selectAll" resultMap="BaseResultMap">
         SELECT
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         FROM
         room
         WHERE status = 1

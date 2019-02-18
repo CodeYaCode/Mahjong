@@ -7,14 +7,19 @@ package com.chen.mahjong.constant;
 public class WebConstants {
 
     /**
-     * session key
-     */
-    public final static String SESSION_USER_NAME = "userName";
-
-    /**
      * session id key
      */
     public final static String SESSION_ID = "sessionId";
+
+    /**
+     * userId
+     */
+    public final static String USER_ID = "userId";
+
+    /**
+     * user
+     */
+    public final static String USER = "user";
 
     /// 微信登录参数 ///
     /**

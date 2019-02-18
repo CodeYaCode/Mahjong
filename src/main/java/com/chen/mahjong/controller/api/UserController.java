@@ -26,10 +26,10 @@ public class UserController {
         return userService.listAll().toJson();
     }
 
-    @GetMapping("/login")
-    public String login(@RequestParam("username") String username) {
-        return userService.login(username).toJson();
-    }
+//    @GetMapping("/login")
+//    public String login(@RequestParam("username") String username) {
+//        return userService.login(username).toJson();
+//    }
 
     @GetMapping("/logout")
     public String logout() {

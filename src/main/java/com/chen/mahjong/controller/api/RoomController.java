@@ -18,8 +18,8 @@ public class RoomController {
     private IRoomService roomService;
 
     @PostMapping("/create")
-    public String create(@RequestParam("roomName") String roomName) {
-        return roomService.create(roomName).toJson();
+    public String create(@RequestParam("nickname") String nickname) {
+        return roomService.create(nickname).toJson();
     }
 
     @GetMapping("/list")
